@@ -1,5 +1,6 @@
-.container {
-  width: 100%;
-  height: 15vh;
-  background-color: green;
-}
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import './components/MainContainer';
+@import './components/NavTab';
+@import 'components/PokedexView';

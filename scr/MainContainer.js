@@ -1,12 +1,15 @@
-import React, {Component} from "react";
+import React from "react";
+import {PokedexView} from "./PokedexView";
+import {NavTab} from "./NavTab";
 
+export function MainContainer() {
 
-export class MainContainer extends Component{
-  render() {
     return (
       <div className="container">
-        {console.log('Hello Inka!!!!!!!!!')}
+        <NavTab />
+        Komponent funkcyjny
+        <PokedexView />
       </div>
     )
-  }
+
 }
