@@ -1,0 +1,19 @@
+.pokemon {
+  box-shadow: 0 0 3px #333;
+  border-radius: 6px;
+  background-color: #777;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+.pokemon__name {
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+
+.pokemon__image {
+  max-height: 200px;
+  max-width: 200px;
+}

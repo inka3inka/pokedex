@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
-@import './components/MainContainer';
-@import './components/NavTab';
+@import 'components/MainContainer';
+@import 'components/NavTab';
 @import 'components/PokedexView';
+@import 'components/Pokemon';

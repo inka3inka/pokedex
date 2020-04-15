@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import {MainContainer} from "./scr/MainContainer"
+import {MainContainer} from "./src/MainContainer"
 
 
 //App
