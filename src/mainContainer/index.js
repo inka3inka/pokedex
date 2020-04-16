@@ -19,21 +19,22 @@ export default class MainContainer extends Component {
 				method: 'GET'
 			})
 
-			return request.then(response => response.json());
-		})
+			return request.then(response => response.json())
+		});
 
 		Promise.all(pokemonPromises)
 			.then((pokemons)=> this.setState({
 				pokemons
 			}))
+			.catch(err => alert(err))
 	}
 
 	setActivePage = (activePageIndex) => {
 		this.setState({
 			activePageIndex: activePageIndex
-		})
-		// TODO scroll to page top
-	}
+		});
+		window.scrollTo(0, 0)
+	};
 
 	render() {
 		const { activePageIndex, itemsPerPage, pokemons } = this.state;

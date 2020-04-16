@@ -6,7 +6,7 @@ import './styles.scss';
 export default function NavTab(){
   return (
     <div className="nav__container">
-      <Sider/>
+      <Sider />
       <Searcher />
     </div>
   )

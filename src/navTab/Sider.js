@@ -24,26 +24,30 @@ export default class Sider extends Component {
 
   render() {
     return (
-      <Menu
-        className="menu"
-        mode="inline"
-        openKeys={this.state.openKeys}
-        onOpenChange={this.onOpenChange}
-      >
-        <SubMenu
-          key="sub1"
-          title={
-            <div className="menu__button">
-              <img src="../../icons8-menu%20-light.svg"/>
-            </div>
-          }
+      <div className="nav__upper-tab">
+        <Menu
+          className="menu"
+          mode="inline"
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
         >
-          <Menu.Item key="1" className="menu__item">Option 1</Menu.Item>
-          <Menu.Item key="2" className="menu__item">Option 2</Menu.Item>
-          <Menu.Item key="3" className="menu__item">Option 3</Menu.Item>
-          <Menu.Item key="4" className="menu__item">Option 4</Menu.Item>
-        </SubMenu>
-      </Menu>
+          <SubMenu
+            key="sub1"
+            title={
+              <div className="menu__button">
+                <img src="../../icons8-menu%20-light.svg"/>
+              </div>
+            }
+          >
+            <Menu.Item key="1" className="menu__item">Option 1</Menu.Item>
+            <Menu.Item key="2" className="menu__item">Option 2</Menu.Item>
+            <Menu.Item key="3" className="menu__item">Option 3</Menu.Item>
+            <Menu.Item key="4" className="menu__item">Option 4</Menu.Item>
+          </SubMenu>
+        </Menu>
+        <div className="nav__header">Pokedex</div>
+        <div className="pokeball__container"><img className="pokeball__image" src="../../icons8-pokeball-48.png" alt="pokeball"/></div>
+      </div>
     );
   }
 }

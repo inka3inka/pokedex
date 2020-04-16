@@ -8,7 +8,7 @@
   font-size: 18px;
   position: sticky;
   top: 0;
-  box-shadow: 0 0 6px #000;
+  box-shadow: 0 0 6px $background-darker-color;
 
   span {
     background-color: #ffffff;
@@ -38,17 +38,47 @@
   height: 8vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .menu__item {
   width: 100vw;
   height: 8vh;
-  background-color: white;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 6px $background-medium-color;
+}
+
+.nav__upper-tab {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__header {
+  width: 50vw;
+  display: flex;
+  justify-content: flex-start;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 2.7vh;
+}
+
+.pokeball__container {
+  width: 20vw;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.3vh;
+}
+
+.pokeball__image {
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .searcher__tab {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: 0 0 6px $background-darker-color;
 }

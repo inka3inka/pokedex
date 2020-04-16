@@ -1,7 +1,7 @@
 @import '../../scss/variables';
 
 .pokemon {
-  box-shadow: 0 0 3px #333;
+  box-shadow: 0 0 6px $background-darker-color;
   border-radius: 6px;
   background-color: #ffffff;
   padding: 1.5vh;
@@ -19,6 +19,15 @@
 .pokemon__statistics {
   font-size: 16px;
   line-height: 20px;
+}
+
+.pokemon__statistics--simple-header {
+  display: flex;
+  flex-direction: row;
+
+  span {
+    margin-right: 2px
+  }
 }
 
 .pokemon__abilities {
