@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .nav__container {
   width: 100%;
@@ -9,6 +10,10 @@
   position: sticky;
   top: 0;
   box-shadow: 0 0 6px $background-darker-color;
+
+  @include media-tablet {
+    font-size: 22px
+  }
 
   span {
     background-color: #ffffff;
@@ -26,11 +31,20 @@
     background-color: $background-medium-color;
     border: none;
     font-size: 16px;
+
+    @include media-tablet {
+      font-size: 20px
+    }
   }
 }
 
 .menu {
-  width: 25vw
+  width: 25vw;
+  display: block;
+
+  @include media-desktop {
+    display: none
+  }
 }
 
 .menu__button {
@@ -38,6 +52,22 @@
   height: 8vh;
   display: flex;
   justify-content: center;
+}
+
+.menu__icon--small {
+  display: block;
+
+  @include media-tablet {
+    display: none
+  }
+}
+
+.menu__icon--medium {
+  display: none;
+
+  @include media-tablet {
+    display: block
+  }
 }
 
 .menu__item {
@@ -62,6 +92,10 @@
   font-weight: bold;
   font-size: 20px;
   padding-top: 2.7vh;
+
+  @include media-tablet {
+    font-size: 30px;
+  }
 }
 
 .pokeball__container {
@@ -69,11 +103,30 @@
   display: flex;
   justify-content: flex-end;
   padding-top: 1.3vh;
+
+  @include media-tablet {
+    padding-top: 0
+  }
 }
 
-.pokeball__image {
+.pokeball__image--small {
   max-width: 40px;
   max-height: 40px;
+  display: block;
+
+  @include media-tablet {
+    display: none
+  }
+}
+
+.pokeball__image--medium {
+  max-width: 80px;
+  max-height: 80px;
+  display: none;
+
+  @include media-tablet {
+    display: block
+  }
 }
 
 .searcher__tab {

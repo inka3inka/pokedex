@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/_mixins.scss';
 
 .main__container {
   width: 100%;
@@ -16,4 +17,8 @@
   padding: 6px 0;
   box-shadow: 0 0 6px #000;
   background: #f1f1f1;
+
+  @include media-tablet {
+    padding: 2vh 0;
+  }
 }

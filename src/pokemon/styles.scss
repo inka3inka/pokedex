@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .pokemon {
   box-shadow: 0 0 6px $background-darker-color;
@@ -8,17 +9,30 @@
   margin: 1.5vh;
   width: 65vw;
   color: $background-darker-color;
+
+  @include media-tablet {
+    width: 40vw
+  }
 }
 
 .pokemon__name {
   font-size: 1.2em;
   text-transform: capitalize;
   font-weight: bold;
+
+  @include media-tablet {
+    font-size: 1.4em;
+  }
 }
 
 .pokemon__statistics {
   font-size: 16px;
   line-height: 20px;
+
+  @include media-tablet {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .pokemon__statistics--simple-header {

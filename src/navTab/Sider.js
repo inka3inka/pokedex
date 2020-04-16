@@ -25,6 +25,8 @@ export default class Sider extends Component {
   render() {
     return (
       <div className="nav__upper-tab">
+
+        /*Menu button for mobile*/
         <Menu
           className="menu"
           mode="inline"
@@ -35,7 +37,8 @@ export default class Sider extends Component {
             key="sub1"
             title={
               <div className="menu__button">
-                <img src="../../icons8-menu%20-light.svg"/>
+                <img className="menu__icon--small" src="../../icons8-menu%20-light.svg"/>
+                <img className="menu__icon--medium" src="../../icons8-menu-medium.svg" />
               </div>
             }
           >
@@ -45,8 +48,15 @@ export default class Sider extends Component {
             <Menu.Item key="4" className="menu__item">Option 4</Menu.Item>
           </SubMenu>
         </Menu>
+
+        /*Menu tab for desktops*/
+        <div>
+        </div>
         <div className="nav__header">Pokedex</div>
-        <div className="pokeball__container"><img className="pokeball__image" src="../../icons8-pokeball-48.png" alt="pokeball"/></div>
+        <div className="pokeball__container">
+          <img className="pokeball__image--small" src="../../icons8-pokeball-48.png" alt="pokeball"/>
+          <img className="pokeball__image--medium" src="../../icons8-pokeball-96-medium.png" alt="pokeball"/>
+        </div>
       </div>
     );
   }
