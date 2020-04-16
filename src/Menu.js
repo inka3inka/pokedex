@@ -33,9 +33,9 @@ export class Sider extends Component {
         <SubMenu
           key="sub1"
           title={
-            <span className="menu__button">
-              <span>Menu</span>
-            </span>
+            <div className="menu__button">
+              <img src="../icons8-menu%20-light.svg"/>
+            </div>
           }
         >
           <Menu.Item key="1" className="menu__item">Option 1</Menu.Item>

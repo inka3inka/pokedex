@@ -4,7 +4,7 @@ import {Sider} from "./Menu";
 
 export function NavTab(){
   return (
-    <div className="nav">
+    <div className="nav__container">
       <Sider/>
       <Searcher />
     </div>

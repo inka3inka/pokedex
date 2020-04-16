@@ -1,19 +1,38 @@
+@import '../variables';
+
 .pokemon {
   box-shadow: 0 0 3px #333;
   border-radius: 6px;
-  background-color: #777;
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
+  background-color: #ffffff;
+  padding: 1.5vh;
+  margin: 1.5vh;
+  width: 65vw;
+  color: $background-darker-color;
 }
 
 .pokemon__name {
   font-size: 1.2em;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
+.pokemon__statistics {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.pokemon__abilities {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-image__container {
+  display: flex;
+  justify-content: center;
+}
 
 .pokemon__image {
   max-height: 200px;
   max-width: 200px;
+  padding: 1vh;
 }

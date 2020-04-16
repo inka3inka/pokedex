@@ -2,10 +2,11 @@
   width: 80%;
   height: 80%;
   margin: 0 auto;
-  background-color: #666;
+  padding-top: 1.5vh;
 
   > ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
