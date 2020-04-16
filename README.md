@@ -21,6 +21,3 @@ Simple app for browsing list of available pokemons.
 ## Assets
 
 Assets downloaded from https://icons8.com
-
-## Dev todo
-- setup docs
