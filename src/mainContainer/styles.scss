@@ -2,13 +2,16 @@
 
 .main__container {
   width: 100%;
+  min-height: 100vh;
   background-color: $background-medium-color;
   font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .pokedex-pagination {
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 6px 0;
   box-shadow: 0 0 6px #000;

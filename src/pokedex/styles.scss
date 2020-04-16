@@ -2,11 +2,11 @@
   width: 80%;
   height: 80%;
   margin: 0 auto;
-  padding-top: 1.5vh;
 
   > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 1.5vh 0
   }
 }
