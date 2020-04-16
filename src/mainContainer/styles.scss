@@ -1,0 +1,16 @@
+@import '../../scss/variables';
+
+.main__container {
+  width: 100%;
+  background-color: $background-medium-color;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.pokedex-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  box-shadow: 0 0 6px #000;
+  background: #f1f1f1;
+}

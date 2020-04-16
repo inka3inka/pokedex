@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import {MainContainer} from "./src/MainContainer";
+import MainContainer from "./src/mainContainer/index";
+import './scss/index.scss';
 
 
 //App

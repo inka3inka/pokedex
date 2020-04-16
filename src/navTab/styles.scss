@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../../scss/variables';
 
 .nav__container {
   width: 100%;
@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   font-size: 18px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 6px #000;
 
   span {
     background-color: #ffffff;

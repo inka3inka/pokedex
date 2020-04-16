@@ -4,7 +4,7 @@ import { Input } from 'antd';
 
 const { Search } = Input;
 
-export function Searcher() {
+export default function Searcher() {
   return (
     <Search
       className="searcher__tab"

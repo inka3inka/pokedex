@@ -4,7 +4,7 @@ const entryPath = "./";
 const entryFile = "app.js";
 
 module.exports = {
-  entry: [`./${entryPath}/${entryFile}`, `./scss/style.scss`],
+  entry: [`./${entryPath}/${entryFile}`],
   output: {
     filename: "out.js",
     path: path.resolve(__dirname, `${entryPath}/build`)

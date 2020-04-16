@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 
 const { SubMenu } = Menu;
 
-export class Sider extends Component {
+export default class Sider extends Component {
   // submenu keys of first level
   rootSubmenuKeys = ['sub1'];
 
@@ -34,7 +34,7 @@ export class Sider extends Component {
           key="sub1"
           title={
             <div className="menu__button">
-              <img src="../icons8-menu%20-light.svg"/>
+              <img src="../../icons8-menu%20-light.svg"/>
             </div>
           }
         >
