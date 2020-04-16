@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+@import '../../scss/_mixins.scss';
+
+.main__container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $background-medium-color;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pokedex-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  box-shadow: 0 0 6px #000;
+  background: #f1f1f1;
+
+  > .pagination {
+    flex-wrap: wrap;
+  }
+
+  @include media-tablet {
+    padding: 2vh 0;
+  }
+}
