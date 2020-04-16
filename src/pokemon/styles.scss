@@ -7,18 +7,21 @@
   background-color: #ffffff;
   padding: 1.5vh;
   margin: 1.5vh;
-  width: 65vw;
+  width: 300px;
   color: $background-darker-color;
 
-  @include media-tablet {
-    width: 40vw
-  }
+  // @include media-tablet {
+  //   width: 40vw
+  // }
 }
 
 .pokemon__name {
   font-size: 1.2em;
   text-transform: capitalize;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
   @include media-tablet {
     font-size: 1.4em;
@@ -58,4 +61,17 @@
   max-height: 200px;
   max-width: 200px;
   padding: 1vh;
+}
+
+.pokemon-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-row__label {
+  margin-right: 10px;
+}
+
+.pokemon-row__content {
+  text-align: right;
 }

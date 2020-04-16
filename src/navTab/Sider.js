@@ -26,9 +26,8 @@ export default class Sider extends Component {
     return (
       <div className="nav__upper-tab">
 
-        /*Menu button for mobile*/
         <Menu
-          className="menu"
+          className="menu-mobile"
           mode="inline"
           openKeys={this.state.openKeys}
           onOpenChange={this.onOpenChange}
@@ -49,10 +48,15 @@ export default class Sider extends Component {
           </SubMenu>
         </Menu>
 
-        /*Menu tab for desktops*/
         <div>
         </div>
         <div className="nav__header">Pokedex</div>
+        <div className="menu-desktop">
+          <div className="menu-desktop__element">Option 1</div>
+          <div className="menu-desktop__element">Option 2</div>
+          <div className="menu-desktop__element">Option 3</div>
+          <div className="menu-desktop__element">Option 4</div>
+        </div>
         <div className="pokeball__container">
           <img className="pokeball__image--small" src="../../icons8-pokeball-48.png" alt="pokeball"/>
           <img className="pokeball__image--medium" src="../../icons8-pokeball-96-medium.png" alt="pokeball"/>

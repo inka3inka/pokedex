@@ -10,41 +10,74 @@ export default class MainContainer extends Component {
 	state = {
 		pokemons: [],
 		activePageIndex: 0,
-		itemsPerPage: 5
+		itemsPerPage: 20,
+		pokemonCount: 0
 	}
 
 	componentDidMount() {
-		const pokemonPromises = new Array(11).fill(null).map((_, index) => {
-			const request = fetch(`https://pokeapi.co/api/v2/pokemon/${index + 1}/`, {
+		this.loadPokemonCount();
+	}
+
+	loadPokemonCount(){
+		const request = fetch(`https://pokeapi.co/api/v2/pokemon`, {
+			method: 'GET'
+		})
+
+		request
+			.then(response => response.json())
+			.then(({ count }) => {
+				this.setState({
+					pokemonCount: count
+				})
+				this.loadPokemons();
+			})
+	}
+
+	loadPokemons() {
+		const { activePageIndex, itemsPerPage } = this.state;
+		const pageOffset =  1 + activePageIndex * itemsPerPage;
+		const pokemonPromises = new Array(itemsPerPage).fill(null).map((_, index) => {
+			const request = fetch(`https://pokeapi.co/api/v2/pokemon/${index + pageOffset}/`, {
 				method: 'GET'
 			})
 
 			return request.then(response => response.json())
 		});
 
-		Promise.all(pokemonPromises)
+		Promise
+			.all(pokemonPromises)
 			.then((pokemons)=> this.setState({
-				pokemons
+				pokemons,
+				isLoading: false
 			}))
-			.catch(err => alert(err))
+			.catch(err => {
+				this.setState({
+					isLoading: false
+				});
+				alert(err);
+			})
+
 	}
 
 	setActivePage = (activePageIndex) => {
 		this.setState({
-			activePageIndex: activePageIndex
-		});
-		window.scrollTo(0, 0)
+			activePageIndex: activePageIndex,
+			pokemons: [],
+			isLoading: true
+		}, () => this.loadPokemons());
+
+		window.scrollTo(0, 0);
 	};
 
 	render() {
-		const { activePageIndex, itemsPerPage, pokemons } = this.state;
-		const pokemonsToShow = getPokemonsToShow(this.state);
-		const pageCount = Math.ceil(pokemons.length / itemsPerPage);
+		const { activePageIndex, itemsPerPage, pokemonCount } = this.state;
+		// const pokemonsToShow = getPokemonsToShow(this.state);
+		const pageCount =Math.ceil(pokemonCount / itemsPerPage);
 
 		return (
 			<div className="main__container">
 				<NavTab />
-				<Pokedex pokemons={pokemonsToShow}/>
+				<Pokedex pokemons={this.state.pokemons}/>
 				<div className="pokedex-pagination">
 					<Pagination>
 						{
