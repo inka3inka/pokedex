@@ -1,12 +1,12 @@
 import React from 'react';
 import {Searcher} from "./Searcher";
-import {Menu} from "./Menu";
+import {Sider} from "./Menu";
 
 export function NavTab(){
   return (
     <div className="nav">
-      <Menu/>
-      <Searcher/>
+      <Sider/>
+      <Searcher />
     </div>
   )
 }
