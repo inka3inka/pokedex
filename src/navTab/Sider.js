@@ -36,8 +36,8 @@ export default class Sider extends Component {
             key="sub1"
             title={
               <div className="menu__button">
-                <img className="menu__icon--small" src="../../icons8-menu%20-light.svg"/>
-                <img className="menu__icon--medium" src="../../icons8-menu-medium.svg" />
+                <img className="menu__icon--small" src="./src/assets/icons8-menu%20-light.svg"/>
+                <img className="menu__icon--medium" src="./src/assets/icons8-menu-medium.svg" />
               </div>
             }
           >
@@ -58,8 +58,8 @@ export default class Sider extends Component {
           <div className="menu-desktop__element">Option 4</div>
         </div>
         <div className="pokeball__container">
-          <img className="pokeball__image--small" src="../../icons8-pokeball-48.png" alt="pokeball"/>
-          <img className="pokeball__image--medium" src="../../icons8-pokeball-96-medium.png" alt="pokeball"/>
+          <img className="pokeball__image--small" src="./src/assets/icons8-pokeball-48.png" alt="pokeball"/>
+          <img className="pokeball__image--medium" src="./src/assets/icons8-pokeball-96-medium.png" alt="pokeball"/>
         </div>
       </div>
     );
