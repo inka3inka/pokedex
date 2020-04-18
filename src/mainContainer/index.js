@@ -69,10 +69,16 @@ export default class MainContainer extends Component {
 		window.scrollTo(0, 0);
 	};
 
+	setDisabledPage = (activePageIndex,pageCount) => {
+		return activePageIndex === 0 ||  activePageIndex === pageCount -1 ? "disabled" : null
+	};
+
 	render() {
 		const { activePageIndex, itemsPerPage, pokemonCount } = this.state;
 		// const pokemonsToShow = getPokemonsToShow(this.state);
 		const pageCount =Math.ceil(pokemonCount / itemsPerPage);
+		const minVisiblePageIndex = activePageIndex - 2;
+		const maxVisiblePageIndex = activePageIndex + 2;
 
 		return (
 			<div className="main__container">
@@ -80,6 +86,10 @@ export default class MainContainer extends Component {
 				<Pokedex pokemons={this.state.pokemons}/>
 				<div className="pokedex-pagination">
 					<Pagination>
+						<Pagination.First onClick={() => this.setActivePage(0)} disabled={this.setDisabledPage(activePageIndex)}/>
+						<Pagination.Prev onClick={() => this.setActivePage(activePageIndex-1)} disabled={this.setDisabledPage(activePageIndex)}/>
+						<Pagination.Item>{1}</Pagination.Item>
+						<Pagination.Ellipsis />
 						{
 							new Array(pageCount).fill(null)
 								.map((_, index) => // inex as key here won't lead to sideeffects
@@ -87,7 +97,12 @@ export default class MainContainer extends Component {
 										{index + 1}
 									</Pagination.Item>
 								)
+								.filter(element => element.key >= minVisiblePageIndex && element.key <= maxVisiblePageIndex)
 						}
+						<Pagination.Ellipsis />
+						<Pagination.Item>{pageCount}</Pagination.Item>
+						<Pagination.Next onClick={() => this.setActivePage(activePageIndex+1)} disabled={this.setDisabledPage(activePageIndex, pageCount)}/>
+						<Pagination.Last onClick={() => this.setActivePage(pageCount-1)} disabled={this.setDisabledPage(activePageIndex, pageCount)}/>
 					</Pagination>
 				</div>
 			</div>
