@@ -18,7 +18,7 @@ export default class MainContainer extends Component {
 		this.loadPokemonCount();
 	}
 
-	loadPokemonCount(){
+	loadPokemonCount() {
 		const request = fetch(`https://pokeapi.co/api/v2/pokemon`, {
 			method: 'GET'
 		})
@@ -46,7 +46,7 @@ export default class MainContainer extends Component {
 
 		Promise
 			.all(pokemonPromises)
-			.then((pokemons)=> this.setState({
+			.then((pokemons) => this.setState({
 				pokemons,
 				isLoading: false
 			}))
@@ -73,6 +73,16 @@ export default class MainContainer extends Component {
 		return activePageIndex === 0 ||  activePageIndex === pageCount -1 ? "disabled" : null
 	};
 
+	searchPokemon = (searchTag) => {
+		fetch(`https://pokeapi.co/api/v2/pokemon/${searchTag}/`, {
+			method: 'GET'
+		})
+			.then(response => response.json())
+			.then((pokemon) => this.setState({
+				pokemons: [pokemon]
+			}))
+	}
+
 	render() {
 		const { activePageIndex, itemsPerPage, pokemonCount } = this.state;
 		// const pokemonsToShow = getPokemonsToShow(this.state);
@@ -82,7 +92,7 @@ export default class MainContainer extends Component {
 
 		return (
 			<div className="main__container">
-				<NavTab />
+				<NavTab searchPokemon={this.searchPokemon} />
 				<Pokedex pokemons={this.state.pokemons}/>
 				<div className="pokedex-pagination">
 					<Pagination>
