@@ -36,12 +36,15 @@ export default class Sider extends Component {
             key="sub1"
             title={
               <div className="menu__button">
-                <img className="menu__icon--small" src="../../icons8-menu%20-light.svg"/>
-                <img className="menu__icon--medium" src="../../icons8-menu-medium.svg" />
+                <img className="menu__icon--small" src="./src/assets/icons8-menu%20-light.svg"/>
+                <img className="menu__icon--medium" src="./src/assets/icons8-menu-medium.svg" />
               </div>
             }
           >
-            <Menu.Item key="1" className="menu__item">Option 1</Menu.Item>
+            <Menu.Item key="1" className="menu__item" onClick = {() => {
+              this.props.reload();
+              console.log('Clicked!')
+            }}>Show Pokedex</Menu.Item>
             <Menu.Item key="2" className="menu__item">Option 2</Menu.Item>
             <Menu.Item key="3" className="menu__item">Option 3</Menu.Item>
             <Menu.Item key="4" className="menu__item">Option 4</Menu.Item>
@@ -52,14 +55,17 @@ export default class Sider extends Component {
         </div>
         <div className="nav__header">Pokedex</div>
         <div className="menu-desktop">
-          <div className="menu-desktop__element">Option 1</div>
+          <div className="menu-desktop__element" onClick={() => {
+            this.props.reload();
+            console.log('Clicked!')
+          }}>Show Pokedex</div>
           <div className="menu-desktop__element">Option 2</div>
           <div className="menu-desktop__element">Option 3</div>
           <div className="menu-desktop__element">Option 4</div>
         </div>
         <div className="pokeball__container">
-          <img className="pokeball__image--small" src="../../icons8-pokeball-48.png" alt="pokeball"/>
-          <img className="pokeball__image--medium" src="../../icons8-pokeball-96-medium.png" alt="pokeball"/>
+          <img className="pokeball__image--small" src="./src/assets/icons8-pokeball-48.png" alt="pokeball"/>
+          <img className="pokeball__image--medium" src="./src/assets/icons8-pokeball-96-medium.png" alt="pokeball"/>
         </div>
       </div>
     );
