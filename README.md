@@ -8,6 +8,12 @@ Simple app for browsing list of available pokemons.
 ## Running
 `npm run start`
 
+## Technologies
+- React
+- SASS
+- React-bootstrap
+- Ant Design
+
 ## TODO
 1. App uses custom setup of webpack and react, so few things are missing:
 - redux
