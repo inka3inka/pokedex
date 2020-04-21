@@ -83,6 +83,10 @@ export default class MainContainer extends Component {
 			}))
 	}
 
+	reload = () => {
+		this.loadPokemonCount()
+	}
+
 	render() {
 		const { activePageIndex, itemsPerPage, pokemonCount } = this.state;
 		// const pokemonsToShow = getPokemonsToShow(this.state);
@@ -92,7 +96,7 @@ export default class MainContainer extends Component {
 
 		return (
 			<div className="main__container">
-				<NavTab searchPokemon={this.searchPokemon} reload={this.loadPokemonCount}/>
+				<NavTab searchPokemon={this.searchPokemon} reload={this.reload}/>
 				<Pokedex pokemons={this.state.pokemons}/>
 				<div className="pokedex-pagination">
 					<Pagination>
