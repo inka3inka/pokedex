@@ -80,6 +80,7 @@ export default class MainContainer extends Component {
 			.then((pokemon) => this.setState({
 				pokemons: [pokemon]
 			}))
+			.catch(() => alert("There is no such Pokemon. Try again!!!"))
 	}
 
 	reload = () => {
