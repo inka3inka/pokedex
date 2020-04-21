@@ -92,7 +92,7 @@ export default class MainContainer extends Component {
 
 		return (
 			<div className="main__container">
-				<NavTab searchPokemon={this.searchPokemon} />
+				<NavTab searchPokemon={this.searchPokemon} reload={this.loadPokemonCount}/>
 				<Pokedex pokemons={this.state.pokemons}/>
 				<div className="pokedex-pagination">
 					<Pagination>

@@ -41,7 +41,10 @@ export default class Sider extends Component {
               </div>
             }
           >
-            <Menu.Item key="1" className="menu__item" >Show Pokedex</Menu.Item>
+            <Menu.Item key="1" className="menu__item" onClick = {() => {
+              this.props.reload();
+              console.log('Clicked!')
+            }}>Show Pokedex</Menu.Item>
             <Menu.Item key="2" className="menu__item">Option 2</Menu.Item>
             <Menu.Item key="3" className="menu__item">Option 3</Menu.Item>
             <Menu.Item key="4" className="menu__item">Option 4</Menu.Item>
@@ -52,7 +55,10 @@ export default class Sider extends Component {
         </div>
         <div className="nav__header">Pokedex</div>
         <div className="menu-desktop">
-          <div className="menu-desktop__element" >Show Pokedex</div>
+          <div className="menu-desktop__element" onClick={() => {
+            this.props.reload();
+            console.log('Clicked!')
+          }}>Show Pokedex</div>
           <div className="menu-desktop__element">Option 2</div>
           <div className="menu-desktop__element">Option 3</div>
           <div className="menu-desktop__element">Option 4</div>

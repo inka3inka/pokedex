@@ -17,7 +17,7 @@ export default class NavTab extends Component {
   render(){
     return (
       <div className="nav__container">
-        <Sider />
+        <Sider reload={this.props.reload}/>
         <Searcher onDone={this.onDone}/>
       </div>
     )
